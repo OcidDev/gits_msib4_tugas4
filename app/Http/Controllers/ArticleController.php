@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $items = User::all();
-        return view('welcome',compact('items'));
+        $data['title'] = 'Halaman Utama';
+        return view('article.index',$data);
     }
 
     /**
@@ -26,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('create');
+        //
     }
 
     /**
